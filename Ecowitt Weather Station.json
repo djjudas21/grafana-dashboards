@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.5.3"
+      "version": "9.5.5"
     },
     {
       "type": "panel",
@@ -140,7 +140,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -181,7 +181,7 @@
               }
             ]
           },
-          "unit": "pressurehpa"
+          "unit": "percent"
         },
         "overrides": []
       },
@@ -189,6 +189,72 @@
         "h": 7,
         "w": 4,
         "x": 4,
+        "y": 1
+      },
+      "id": 41,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "expr": "label_replace(label_replace(humidity_percent{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Humidity",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pressurehpa"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 8,
         "y": 1
       },
       "id": 37,
@@ -206,7 +272,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -255,7 +321,7 @@
       "gridPos": {
         "h": 7,
         "w": 4,
-        "x": 8,
+        "x": 12,
         "y": 1
       },
       "id": 38,
@@ -273,7 +339,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -321,7 +387,7 @@
       "gridPos": {
         "h": 7,
         "w": 4,
-        "x": 12,
+        "x": 16,
         "y": 1
       },
       "id": 39,
@@ -339,7 +405,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -387,7 +453,7 @@
       "gridPos": {
         "h": 7,
         "w": 4,
-        "x": 16,
+        "x": 20,
         "y": 1
       },
       "id": 40,
@@ -405,7 +471,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -1000,7 +1066,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -1216,7 +1282,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -1264,8 +1330,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1422,6 +1487,6 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 27,
+  "version": 28,
   "weekStart": ""
 }
