@@ -1359,20 +1359,38 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "continuous-GrYlRd"
+            "mode": "thresholds"
           },
           "mappings": [],
-          "max": 10,
+          "max": 12,
           "min": 0,
+          "noValue": "0",
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "transparent",
+                "value": null
               },
               {
-                "color": "red",
-                "value": 80
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-yellow",
+                "value": 3
+              },
+              {
+                "color": "dark-orange",
+                "value": 6
+              },
+              {
+                "color": "dark-red",
+                "value": 8
+              },
+              {
+                "color": "dark-purple",
+                "value": 11
               }
             ]
           }
@@ -1398,7 +1416,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -1489,7 +1507,7 @@
           "unit": "Wm2"
         }
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -1525,6 +1543,6 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 29,
+  "version": 30,
   "weekStart": ""
 }
