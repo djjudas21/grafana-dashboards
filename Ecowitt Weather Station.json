@@ -553,7 +553,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "temp_c{container=\"ecowitt-exporter\"}",
+          "expr": "label_replace(label_replace(temp_c{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
           "groupBy": [
             {
               "params": [
@@ -600,7 +600,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "tempin_c{container=\"ecowitt-exporter\"}",
+          "expr": "label_replace(label_replace(tempin_c{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
           "groupBy": [
             {
               "params": [
@@ -760,7 +760,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(baromrel_hpa, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "label_replace(label_replace(baromrel_hpa{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
           "groupBy": [
             {
               "params": [
@@ -1008,7 +1008,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "dailyrain_mm{container=\"ecowitt-exporter\"}",
+          "expr": "label_replace(label_replace(dailyrain_mm{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1224,7 +1224,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(winddir_degree, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "label_replace(label_replace(winddir_degree{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1303,7 +1303,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(uv, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "label_replace(label_replace(uv{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1394,7 +1394,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(solarradiation_wm2{job=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "label_replace(label_replace(solarradiation_wm2{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1420,8 +1420,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Weather",
+  "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 23,
+  "version": 27,
   "weekStart": ""
 }
