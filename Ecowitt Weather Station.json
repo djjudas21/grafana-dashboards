@@ -228,7 +228,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(humidity_percent{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "humidity_percent{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -294,7 +294,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(baromrel_hpa{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "baromrel_hpa{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -651,7 +651,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(temp_c{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "temp_c{container=\"ecowitt-exporter\"}",
           "groupBy": [
             {
               "params": [
@@ -698,7 +698,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(tempin_c{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "tempin_c{container=\"ecowitt-exporter\"}",
           "groupBy": [
             {
               "params": [
@@ -858,7 +858,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(baromrel_hpa{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "baromrel_hpa{container=\"ecowitt-exporter\"}",
           "groupBy": [
             {
               "params": [
@@ -902,7 +902,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "baromabs_hpa",
+          "expr": "baromabs_hpa{container=\"ecowitt-exporter\"}",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1048,7 +1048,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "dailyrain_mm",
+          "expr": "dailyrain_mm{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1059,7 +1059,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "rainrate_mm",
+          "expr": "rainrate_mm{container=\"ecowitt-exporter\"}",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1071,7 +1071,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "eventrain_mm",
+          "expr": "eventrain_mm{container=\"ecowitt-exporter\"}",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1137,7 +1137,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(dailyrain_mm{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "dailyrain_mm{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1275,7 +1275,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(windspeed_mph{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "windspeed_mph{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1286,7 +1286,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "max(label_replace(label_replace(windgust_mph{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\"))",
+          "expr": "max(windgust_mph{container=\"ecowitt-exporter\"})",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1536,7 +1536,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(uv{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "uv{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1627,7 +1627,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(solarradiation_wm2{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "solarradiation_wm2{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1775,7 +1775,7 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 0,
+            "fillOpacity": 10,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -2057,6 +2057,6 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 35,
+  "version": 36,
   "weekStart": ""
 }
