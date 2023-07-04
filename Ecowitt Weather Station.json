@@ -13,12 +13,6 @@
   "__requires": [
     {
       "type": "panel",
-      "id": "barchart",
-      "name": "Bar chart",
-      "version": ""
-    },
-    {
-      "type": "panel",
       "id": "gauge",
       "name": "Gauge",
       "version": ""
@@ -234,7 +228,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(humidity_percent{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "humidity_percent{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -402,7 +396,7 @@
               }
             ]
           },
-          "unit": "mm/hr"
+          "unit": "mm/h"
         },
         "overrides": []
       },
@@ -657,7 +651,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(temp_c{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "temp_c{container=\"ecowitt-exporter\"}",
           "groupBy": [
             {
               "params": [
@@ -704,7 +698,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(tempin_c{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "tempin_c{container=\"ecowitt-exporter\"}",
           "groupBy": [
             {
               "params": [
@@ -864,7 +858,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(baromrel_hpa{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "baromrel_hpa{container=\"ecowitt-exporter\"}",
           "groupBy": [
             {
               "params": [
@@ -908,7 +902,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "baromabs_hpa",
+          "expr": "baromabs_hpa{container=\"ecowitt-exporter\"}",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -937,27 +931,36 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "continuous-blues"
+            "mode": "palette-classic"
           },
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "fillOpacity": 80,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
             },
+            "lineInterpolation": "linear",
             "lineWidth": 1,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
             },
             "thresholdsStyle": {
               "mode": "off"
@@ -979,7 +982,44 @@
           },
           "unit": "lengthmm"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "A"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Rain rate"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Daily rain"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "C"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Event rain"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 8,
@@ -987,74 +1027,59 @@
         "x": 0,
         "y": 20
       },
-      "id": 15,
-      "interval": "3h",
+      "id": 42,
       "options": {
-        "barRadius": 0,
-        "barWidth": 0.97,
-        "fullHighlight": false,
-        "groupWidth": 0.7,
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
+          "placement": "right",
+          "showLegend": true
         },
-        "orientation": "auto",
-        "showValue": "auto",
-        "stacking": "none",
         "tooltip": {
           "mode": "single",
           "sort": "none"
-        },
-        "xField": "Time",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0
+        }
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "9.5.5",
       "targets": [
         {
-          "alias": "Rain",
           "datasource": {
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(hourlyrain_mm{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
-          "groupBy": [
-            {
-              "params": [
-                "$interval"
-              ],
-              "type": "time"
-            }
-          ],
+          "expr": "dailyrain_mm{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
-          "measurement": "weather",
-          "orderByTime": "ASC",
-          "policy": "default",
           "range": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "rain"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "median"
-              }
-            ]
-          ],
-          "tags": []
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "expr": "rainrate_mm{container=\"ecowitt-exporter\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "expr": "eventrain_mm{container=\"ecowitt-exporter\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "C"
         }
       ],
-      "title": "Hourly rainfall",
-      "type": "barchart"
+      "title": "Rainfall",
+      "type": "timeseries"
     },
     {
       "datasource": {
@@ -1112,7 +1137,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(dailyrain_mm{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "dailyrain_mm{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1200,7 +1225,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Wind speed"
+                "value": "Wind"
               }
             ]
           },
@@ -1224,7 +1249,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 19,
+        "w": 12,
         "x": 0,
         "y": 29
       },
@@ -1234,8 +1259,8 @@
           "calcs": [
             "max"
           ],
-          "displayMode": "table",
-          "placement": "right",
+          "displayMode": "list",
+          "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
@@ -1250,7 +1275,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(windspeed_mph{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "windspeed_mph{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1261,7 +1286,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "max(label_replace(label_replace(windgust_mph{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\"))",
+          "expr": "max(windgust_mph{container=\"ecowitt-exporter\"})",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1279,9 +1304,67 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "fixed"
+            "mode": "palette-classic",
+            "seriesBy": "last"
           },
-          "mappings": [],
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "points",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "displayName": "Direction",
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 0,
+                  "text": "North"
+                },
+                "90": {
+                  "index": 1,
+                  "text": "East"
+                },
+                "180": {
+                  "index": 2,
+                  "text": "South"
+                },
+                "270": {
+                  "index": 3,
+                  "text": "West"
+                },
+                "360": {
+                  "index": 4,
+                  "text": "North"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "max": 360,
           "min": 0,
           "thresholds": {
@@ -1293,34 +1376,63 @@
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 45
+              },
+              {
+                "color": "#EAB839",
+                "value": 135
+              },
+              {
+                "color": "#6ED0E0",
+                "value": 225
+              },
+              {
+                "color": "green",
+                "value": 315
               }
             ]
           },
           "unit": "degree"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Wind direction"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#73BF69",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 9,
-        "w": 5,
-        "x": 19,
+        "w": 12,
+        "x": 12,
         "y": 29
       },
-      "id": 26,
+      "id": 43,
       "options": {
-        "orientation": "auto",
-        "reduceOptions": {
+        "legend": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
-          "fields": "",
-          "values": false
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
       },
-      "pluginVersion": "9.5.5",
       "targets": [
         {
           "datasource": {
@@ -1328,14 +1440,14 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(winddir_degree{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "winddir_degree{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
       "title": "Wind direction",
-      "type": "gauge"
+      "type": "timeseries"
     },
     {
       "collapsed": false,
@@ -1424,7 +1536,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(uv{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "uv{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1515,7 +1627,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "builder",
-          "expr": "label_replace(label_replace(solarradiation_wm2{container=\"ecowitt-exporter\"}, \"pod\", \"\", \"pod\", \"(.*)\"), \"instance\", \"\", \"instance\", \"(.*)\")",
+          "expr": "solarradiation_wm2{container=\"ecowitt-exporter\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1523,6 +1635,408 @@
       ],
       "title": "Solar irradiation",
       "type": "heatmap"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 47
+      },
+      "id": 44,
+      "panels": [],
+      "title": "Air quality",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 12.1
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 35.5
+              },
+              {
+                "color": "red",
+                "value": 55.5
+              },
+              {
+                "color": "dark-purple",
+                "value": 150.5
+              },
+              {
+                "color": "dark-red",
+                "value": 250.5
+              }
+            ]
+          },
+          "unit": "conμgm3"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 48
+      },
+      "id": 45,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "expr": "pm25{container=\"ecowitt-exporter\"}",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "PM2.5",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 12.1
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 35.5
+              },
+              {
+                "color": "red",
+                "value": 55.5
+              },
+              {
+                "color": "dark-purple",
+                "value": 150.5
+              },
+              {
+                "color": "dark-red",
+                "value": 250.5
+              }
+            ]
+          },
+          "unit": "conμgm3"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 48
+      },
+      "id": 46,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "expr": "pm25_avg_24h{container=\"ecowitt-exporter\"}",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "PM2.5 24-hour average",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 56
+      },
+      "id": 47,
+      "panels": [],
+      "title": "Battery status",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "OK"
+                },
+                "1": {
+                  "color": "yellow",
+                  "index": 1,
+                  "text": "Warning"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 57
+      },
+      "id": 48,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "expr": "wh65batt{container=\"ecowitt-exporter\"}",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "WH65 battery health",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 5,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "dark-orange",
+                "value": 1
+              },
+              {
+                "color": "orange",
+                "value": 2
+              },
+              {
+                "color": "#EAB839",
+                "value": 3
+              },
+              {
+                "color": "green",
+                "value": 4
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 57
+      },
+      "id": 49,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.5.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "expr": "pm25batt{container=\"ecowitt-exporter\"}",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "PM2.5 battery",
+      "type": "gauge"
     }
   ],
   "refresh": "5m",
@@ -1543,6 +2057,6 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 30,
+  "version": 36,
   "weekStart": ""
 }
