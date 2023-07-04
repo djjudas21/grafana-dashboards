@@ -382,6 +382,7 @@
             "fixedColor": "blue",
             "mode": "fixed"
           },
+          "decimals": 1,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -991,7 +992,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Rain rate"
+                "value": "Daily rain"
               }
             ]
           },
@@ -1003,7 +1004,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Daily rain"
+                "value": "Rain rate"
               }
             ]
           },
@@ -1092,6 +1093,7 @@
             "fixedColor": "blue",
             "mode": "fixed"
           },
+          "decimals": 1,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -2057,6 +2059,6 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 36,
+  "version": 38,
   "weekStart": ""
 }
