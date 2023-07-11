@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.5.5"
+      "version": "10.0.1"
     },
     {
       "type": "panel",
@@ -150,7 +150,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -220,7 +220,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -286,7 +286,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -354,7 +354,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -422,7 +422,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -504,7 +504,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -1131,7 +1131,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -1251,7 +1251,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
+        "w": 10,
         "x": 0,
         "y": 29
       },
@@ -1416,8 +1416,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 10,
+        "x": 10,
         "y": 29
       },
       "id": 43,
@@ -1450,6 +1450,174 @@
       ],
       "title": "Wind direction",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "from": 337.5,
+                "result": {
+                  "index": 0,
+                  "text": "↓"
+                },
+                "to": 360
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 292.5,
+                "result": {
+                  "index": 1,
+                  "text": "↘"
+                },
+                "to": 337.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 247.5,
+                "result": {
+                  "index": 2,
+                  "text": "→"
+                },
+                "to": 292.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 202.5,
+                "result": {
+                  "index": 3,
+                  "text": "↗"
+                },
+                "to": 247.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 157.5,
+                "result": {
+                  "index": 4,
+                  "text": "↑"
+                },
+                "to": 202.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 112.5,
+                "result": {
+                  "index": 5,
+                  "text": "↖"
+                },
+                "to": 157.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 77.5,
+                "result": {
+                  "index": 6,
+                  "text": "←"
+                },
+                "to": 112.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 22.5,
+                "result": {
+                  "index": 7,
+                  "text": "↙"
+                },
+                "to": 77.5
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 0,
+                "result": {
+                  "index": 8,
+                  "text": "↓"
+                },
+                "to": 22.5
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "degree"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 20,
+        "y": 29
+      },
+      "id": 50,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "10.0.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "winddir_degree{container=\"ecowitt-exporter\"}",
+          "instant": false,
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Wind direction",
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -1530,7 +1698,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -1621,7 +1789,7 @@
           "unit": "Wm2"
         }
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -1946,7 +2114,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2023,7 +2191,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.5.5",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2059,6 +2227,6 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 38,
+  "version": 39,
   "weekStart": ""
 }
