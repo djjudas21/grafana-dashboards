@@ -795,7 +795,7 @@
               },
               {
                 "color": "light-red",
-                "value": 1000
+                "value": 1013
               }
             ]
           },
@@ -2205,6 +2205,6 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 41,
+  "version": 42,
   "weekStart": ""
 }
