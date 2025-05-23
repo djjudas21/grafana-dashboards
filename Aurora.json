@@ -53,8 +53,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -84,7 +83,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -118,8 +117,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -161,7 +159,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -196,8 +194,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -239,7 +236,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -271,8 +268,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "orange",
@@ -314,7 +310,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -392,8 +388,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -450,7 +445,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -532,8 +527,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -590,7 +584,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -685,8 +679,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -718,7 +711,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -783,8 +776,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -816,7 +808,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -882,8 +874,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -915,7 +906,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -995,8 +986,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -1032,7 +1022,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
@@ -1103,8 +1093,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -1140,7 +1129,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -1218,8 +1207,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1251,7 +1239,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -1316,8 +1304,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1349,7 +1336,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.2",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -1369,7 +1356,7 @@
   ],
   "preload": false,
   "refresh": "30s",
-  "schemaVersion": 40,
+  "schemaVersion": 41,
   "tags": [
     "aurora",
     "inverter",
@@ -1387,6 +1374,5 @@
   "timezone": "browser",
   "title": "Aurora",
   "uid": "fef405mi6l62od",
-  "version": 18,
-  "weekStart": ""
+  "version": 18
 }

@@ -106,18 +106,22 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "temp_c{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Temperature",
@@ -182,18 +186,22 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "humidity_percent{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_humidity_percent{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Humidity",
@@ -250,18 +258,22 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "baromrel_hpa{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_barom_hpa{container=\"ecowitt-exporter\", sensor=\"relative\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Pressure",
@@ -320,18 +332,22 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "windspeed_mph{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor=\"windspeed\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Wind",
@@ -390,18 +406,22 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "rainrate_mm{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_rain_mm{container=\"ecowitt-exporter\", sensor=\"rate\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Rainfall",
@@ -475,18 +495,22 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "solarradiation_wm2{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_solarradiation_wm2{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Sunlight",
@@ -548,7 +572,7 @@
         "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "max"
           ],
           "fields": "",
           "values": false
@@ -557,12 +581,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "max(temp_c{container=\"ecowitt-exporter\"})",
+          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -617,7 +641,7 @@
         "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "min"
           ],
           "fields": "",
           "values": false
@@ -626,12 +650,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "min(temp_c{container=\"ecowitt-exporter\"})",
+          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -695,12 +719,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "windspeed_mph{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor=\"windspeed\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -764,12 +788,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "windgust_mph{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor=\"windgust\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -780,6 +804,42 @@
       ],
       "title": "Max wind gust",
       "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 9
+      },
+      "id": 58,
+      "options": {
+        "alertInstanceLabelFilter": "{container=\"ecowitt-exporter\"}",
+        "alertName": "",
+        "dashboardAlerts": false,
+        "datasource": "Prometheus",
+        "groupBy": [],
+        "groupMode": "default",
+        "maxItems": 20,
+        "showInactiveAlerts": false,
+        "sortOrder": 1,
+        "stateFilter": {
+          "error": true,
+          "firing": true,
+          "noData": false,
+          "normal": false,
+          "pending": true,
+          "recovering": true
+        },
+        "viewMode": "list"
+      },
+      "pluginVersion": "12.0.0",
+      "title": "Current alerts",
+      "type": "alertlist"
     },
     {
       "collapsed": false,
@@ -906,7 +966,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "alias": "Indoor",
@@ -914,8 +974,10 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "temp_c{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "fullMetaSearch": false,
           "groupBy": [
             {
               "params": [
@@ -930,6 +992,7 @@
               "type": "fill"
             }
           ],
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "measurement": "http_listener_v2",
           "orderByTime": "ASC",
@@ -953,7 +1016,8 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [],
+          "useBackend": false
         }
       ],
       "timeFrom": "24h",
@@ -1032,7 +1096,7 @@
           "calcs": [],
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "tooltip": {
           "hideZeros": false,
@@ -1040,12 +1104,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "humidity_percent{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_humidity_percent{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1115,20 +1179,7 @@
           },
           "unit": "pressurehpa"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "A"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Relative"
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 10,
@@ -1145,7 +1196,7 @@
           ],
           "displayMode": "table",
           "placement": "right",
-          "showLegend": true
+          "showLegend": false
         },
         "tooltip": {
           "hideZeros": false,
@@ -1153,7 +1204,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "alias": "Barometric Pressure",
@@ -1161,8 +1212,10 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "baromrel_hpa{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_barom_hpa{container=\"ecowitt-exporter\", sensor=\"relative\"}",
+          "fullMetaSearch": false,
           "groupBy": [
             {
               "params": [
@@ -1177,6 +1230,7 @@
               "type": "fill"
             }
           ],
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "measurement": "http_listener_v2",
           "orderByTime": "ASC",
@@ -1198,7 +1252,8 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [],
+          "useBackend": false
         }
       ],
       "timeFrom": "24h",
@@ -1276,44 +1331,7 @@
           },
           "unit": "lengthmm"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "A"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Daily rain"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "B"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Rain rate"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "C"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Event rain"
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 8,
@@ -1337,42 +1355,22 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "dailyrain_mm{container=\"ecowitt-exporter\"}",
-          "legendFormat": "__auto",
+          "expr": "ecowitt_rain_mm{container=\"ecowitt-exporter\", sensor!~\"total|yearly\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "{{sensor}}",
           "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "builder",
-          "expr": "rainrate_mm{container=\"ecowitt-exporter\"}",
-          "hide": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "builder",
-          "expr": "eventrain_mm{container=\"ecowitt-exporter\"}",
-          "hide": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "C"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Rainfall",
@@ -1429,18 +1427,22 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "dailyrain_mm{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_rain_mm{container=\"ecowitt-exporter\", sensor=\"daily\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Daily rainfall",
@@ -1518,40 +1520,11 @@
           },
           "unit": "velocitymph"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "A"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Wind"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "B"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Gusts"
-              },
-              {
-                "id": "custom.drawStyle",
-                "value": "points"
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 10,
+        "h": 8,
+        "w": 17,
         "x": 0,
         "y": 36
       },
@@ -1571,34 +1544,196 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "windspeed_mph{container=\"ecowitt-exporter\"}",
-          "legendFormat": "__auto",
+          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor!=\"maxdailygust\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "{{sensor}}",
           "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "builder",
-          "expr": "max(windgust_mph{container=\"ecowitt-exporter\"})",
-          "hide": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "B"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Wind speed",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 0,
+                  "text": "Calm"
+                },
+                "1": {
+                  "index": 1,
+                  "text": "Light air"
+                },
+                "2": {
+                  "index": 2,
+                  "text": "Light breeze"
+                },
+                "3": {
+                  "index": 3,
+                  "text": "Gentle breeze"
+                },
+                "4": {
+                  "index": 4,
+                  "text": "Moderate breeze"
+                },
+                "5": {
+                  "index": 5,
+                  "text": "Fresh breeze"
+                },
+                "6": {
+                  "index": 6,
+                  "text": "Strong breeze"
+                },
+                "7": {
+                  "index": 7,
+                  "text": "Moderate gale"
+                },
+                "8": {
+                  "index": 8,
+                  "text": "Gale"
+                },
+                "9": {
+                  "index": 9,
+                  "text": "Strong gale"
+                },
+                "10": {
+                  "index": 10,
+                  "text": "Storm"
+                },
+                "11": {
+                  "index": 11,
+                  "text": "Violent storm"
+                },
+                "12": {
+                  "index": 12,
+                  "text": "Hurricane"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "max": 12,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text"
+              },
+              {
+                "color": "super-light-blue",
+                "value": 1
+              },
+              {
+                "color": "light-blue",
+                "value": 2
+              },
+              {
+                "color": "super-light-green",
+                "value": 3
+              },
+              {
+                "color": "light-green",
+                "value": 4
+              },
+              {
+                "color": "green",
+                "value": 5
+              },
+              {
+                "color": "light-yellow",
+                "value": 6
+              },
+              {
+                "color": "yellow",
+                "value": 7
+              },
+              {
+                "color": "orange",
+                "value": 8
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 9
+              },
+              {
+                "color": "dark-orange",
+                "value": 10
+              },
+              {
+                "color": "red",
+                "value": 11
+              },
+              {
+                "color": "dark-red",
+                "value": 12
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 17,
+        "y": 36
+      },
+      "id": 59,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "12.0.0",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "ecowitt_windspeed_beaufort{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Beaufort",
+      "type": "gauge"
     },
     {
       "datasource": {
@@ -1719,10 +1854,10 @@
         ]
       },
       "gridPos": {
-        "h": 9,
-        "w": 10,
-        "x": 10,
-        "y": 36
+        "h": 8,
+        "w": 17,
+        "x": 0,
+        "y": 44
       },
       "id": 43,
       "options": {
@@ -1740,18 +1875,22 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "winddir_degree{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_winddir_degree{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Wind direction",
@@ -1886,10 +2025,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 4,
-        "x": 20,
-        "y": 36
+        "h": 8,
+        "w": 7,
+        "x": 17,
+        "y": 44
       },
       "id": 50,
       "options": {
@@ -1909,19 +2048,23 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
           "exemplar": false,
-          "expr": "winddir_degree{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_winddir_degree{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "instant": false,
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Wind direction",
@@ -1933,7 +2076,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 52
       },
       "id": 30,
       "panels": [],
@@ -2049,7 +2192,7 @@
         "h": 8,
         "w": 5,
         "x": 0,
-        "y": 46
+        "y": 53
       },
       "id": 29,
       "options": {
@@ -2067,18 +2210,22 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "uv{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_uv{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "UV index",
@@ -2108,7 +2255,7 @@
         "h": 8,
         "w": 19,
         "x": 5,
-        "y": 46
+        "y": 53
       },
       "id": 27,
       "options": {
@@ -2121,7 +2268,7 @@
             "mode": "size"
           }
         },
-        "cellGap": 1,
+        "cellGap": 0,
         "cellValues": {
           "unit": "Wm2"
         },
@@ -2159,18 +2306,22 @@
           "unit": "Wm2"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "solarradiation_wm2{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_solarradiation_wm2{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "Solar irradiation",
@@ -2182,7 +2333,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 61
       },
       "id": 44,
       "panels": [],
@@ -2269,7 +2420,7 @@
         "h": 8,
         "w": 10,
         "x": 0,
-        "y": 55
+        "y": 62
       },
       "id": 45,
       "options": {
@@ -2285,18 +2436,22 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "pm25{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_pm25{container=\"ecowitt-exporter\", series=\"realtime\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "PM2.5",
@@ -2382,7 +2537,7 @@
         "h": 8,
         "w": 10,
         "x": 10,
-        "y": 55
+        "y": 62
       },
       "id": 46,
       "options": {
@@ -2398,18 +2553,22 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "pm25_avg_24h{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_pm25{container=\"ecowitt-exporter\", series=\"avg_24h\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
           "legendFormat": "__auto",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
         }
       ],
       "title": "PM2.5 24-hour average",
@@ -2506,7 +2665,7 @@
         "h": 8,
         "w": 4,
         "x": 20,
-        "y": 55
+        "y": 62
       },
       "id": 57,
       "options": {
@@ -2524,12 +2683,12 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "aqi{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_aqi{container=\"ecowitt-exporter\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2547,7 +2706,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 63
+        "y": 70
       },
       "id": 47,
       "panels": [],
@@ -2570,12 +2729,12 @@
                 "0": {
                   "color": "green",
                   "index": 0,
-                  "text": "OK"
+                  "text": "🔋"
                 },
                 "1": {
                   "color": "yellow",
                   "index": 1,
-                  "text": "Warning"
+                  "text": "🪫"
                 }
               },
               "type": "value"
@@ -2592,20 +2751,87 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "A"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "0": {
+                        "color": "green",
+                        "index": 0,
+                        "text": "🔋"
+                      },
+                      "1": {
+                        "color": "red",
+                        "index": 1,
+                        "text": "🪫"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "B"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "from": 3,
+                      "result": {
+                        "color": "green",
+                        "index": 0,
+                        "text": "🔋"
+                      },
+                      "to": 5
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 0,
+                      "result": {
+                        "color": "red",
+                        "index": 1,
+                        "text": "🪫"
+                      },
+                      "to": 2
+                    },
+                    "type": "range"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 6,
+        "w": 24,
         "x": 0,
-        "y": 64
+        "y": 71
       },
       "id": 48,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
@@ -2620,101 +2846,43 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.6.1",
+      "pluginVersion": "12.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
+          "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "wh65batt{container=\"ecowitt-exporter\"}",
-          "legendFormat": "__auto",
+          "expr": "ecowitt_batterystatus{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "{{sensor}}",
           "range": true,
-          "refId": "A"
+          "refId": "A",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "ecowitt_batterylevel{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{sensor}}",
+          "range": true,
+          "refId": "B",
+          "useBackend": false
         }
       ],
-      "title": "WH65 battery health",
+      "title": "Battery status",
       "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 5,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red"
-              },
-              {
-                "color": "dark-orange",
-                "value": 1
-              },
-              {
-                "color": "orange",
-                "value": 2
-              },
-              {
-                "color": "#EAB839",
-                "value": 3
-              },
-              {
-                "color": "green",
-                "value": 4
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 64
-      },
-      "id": 49,
-      "options": {
-        "minVizHeight": 75,
-        "minVizWidth": 75,
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "sizing": "auto"
-      },
-      "pluginVersion": "11.6.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "builder",
-          "expr": "pm25batt{container=\"ecowitt-exporter\"}",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "PM2.5 battery",
-      "type": "gauge"
     }
   ],
   "preload": false,
@@ -2735,5 +2903,5 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 7
+  "version": 22
 }
