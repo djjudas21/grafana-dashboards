@@ -83,7 +83,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 4,
         "x": 0,
         "y": 1
@@ -115,7 +115,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_temp{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -163,7 +163,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 4,
         "x": 4,
         "y": 1
@@ -195,7 +195,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_humidity_percent{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_humidity{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -235,7 +235,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 4,
         "x": 8,
         "y": 1
@@ -267,7 +267,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_barom_hpa{container=\"ecowitt-exporter\", sensor=\"relative\"}",
+          "expr": "ecowitt_barom{container=\"ecowitt-exporter\", sensor=\"relative\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -309,7 +309,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 4,
         "x": 12,
         "y": 1
@@ -341,7 +341,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor=\"windspeed\"}",
+          "expr": "ecowitt_windspeed{container=\"ecowitt-exporter\", sensor=\"windspeed\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -383,7 +383,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 4,
         "x": 16,
         "y": 1
@@ -415,7 +415,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_rain_mm{container=\"ecowitt-exporter\", sensor=\"rate\"}",
+          "expr": "ecowitt_rain{container=\"ecowitt-exporter\", sensor=\"rate\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -472,7 +472,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 4,
         "x": 20,
         "y": 1
@@ -504,7 +504,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_solarradiation_wm2{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_solarradiation{container=\"ecowitt-exporter\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -522,7 +522,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 7
       },
       "id": 51,
       "panels": [],
@@ -561,7 +561,7 @@
         "h": 6,
         "w": 4,
         "x": 0,
-        "y": 9
+        "y": 8
       },
       "id": 52,
       "options": {
@@ -586,7 +586,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_temp{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -630,7 +630,7 @@
         "h": 6,
         "w": 4,
         "x": 4,
-        "y": 9
+        "y": 8
       },
       "id": 53,
       "options": {
@@ -655,7 +655,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_temp{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -699,7 +699,7 @@
         "h": 6,
         "w": 4,
         "x": 8,
-        "y": 9
+        "y": 8
       },
       "id": 54,
       "options": {
@@ -724,7 +724,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor=\"windspeed\"}",
+          "expr": "ecowitt_windspeed{container=\"ecowitt-exporter\", sensor=\"windspeed\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -768,7 +768,7 @@
         "h": 6,
         "w": 4,
         "x": 12,
-        "y": 9
+        "y": 8
       },
       "id": 55,
       "options": {
@@ -793,7 +793,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor=\"windgust\"}",
+          "expr": "ecowitt_windspeed{container=\"ecowitt-exporter\", sensor=\"windgust\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -814,7 +814,7 @@
         "h": 6,
         "w": 8,
         "x": 16,
-        "y": 9
+        "y": 8
       },
       "id": 58,
       "options": {
@@ -847,7 +847,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 14
       },
       "id": 32,
       "panels": [],
@@ -915,38 +915,13 @@
           },
           "unit": "celsius"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "A"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Outdoor"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "B"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Indoor"
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 8,
         "x": 0,
-        "y": 16
+        "y": 15
       },
       "id": 2,
       "options": {
@@ -976,7 +951,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_temp_c{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_temp{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "groupBy": [
             {
@@ -1085,10 +1060,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 8,
         "x": 8,
-        "y": 16
+        "y": 15
       },
       "id": 56,
       "options": {
@@ -1109,7 +1084,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_humidity_percent{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_humidity{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1182,10 +1157,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 8,
         "x": 16,
-        "y": 16
+        "y": 15
       },
       "id": 13,
       "options": {
@@ -1214,7 +1189,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_barom_hpa{container=\"ecowitt-exporter\", sensor=\"relative\"}",
+          "expr": "ecowitt_barom{container=\"ecowitt-exporter\", sensor=\"relative\"}",
           "fullMetaSearch": false,
           "groupBy": [
             {
@@ -1266,7 +1241,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 24
       },
       "id": 33,
       "panels": [],
@@ -1337,7 +1312,7 @@
         "h": 8,
         "w": 19,
         "x": 0,
-        "y": 27
+        "y": 25
       },
       "id": 42,
       "options": {
@@ -1364,7 +1339,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_rain_mm{container=\"ecowitt-exporter\", sensor!~\"total|yearly\"}",
+          "expr": "ecowitt_rain{container=\"ecowitt-exporter\", sensor!~\"total|yearly\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "{{sensor}}",
@@ -1409,7 +1384,7 @@
         "h": 8,
         "w": 5,
         "x": 19,
-        "y": 27
+        "y": 25
       },
       "id": 34,
       "options": {
@@ -1436,7 +1411,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_rain_mm{container=\"ecowitt-exporter\", sensor=\"daily\"}",
+          "expr": "ecowitt_rain{container=\"ecowitt-exporter\", sensor=\"daily\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1454,7 +1429,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 33
       },
       "id": 31,
       "panels": [],
@@ -1520,13 +1495,26 @@
           },
           "unit": "velocitymph"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "windgust"
+            },
+            "properties": [
+              {
+                "id": "custom.drawStyle",
+                "value": "points"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 8,
         "w": 17,
         "x": 0,
-        "y": 36
+        "y": 34
       },
       "id": 25,
       "options": {
@@ -1553,7 +1541,8 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_windspeed_mph{container=\"ecowitt-exporter\", sensor!=\"maxdailygust\"}",
+          "expr": "ecowitt_windspeed{container=\"ecowitt-exporter\", sensor!=\"maxdailygust\"}",
+          "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "{{sensor}}",
@@ -1700,7 +1689,7 @@
         "h": 8,
         "w": 7,
         "x": 17,
-        "y": 36
+        "y": 34
       },
       "id": 59,
       "options": {
@@ -1783,28 +1772,58 @@
           "mappings": [
             {
               "options": {
-                "0": {
+                "from": 0,
+                "result": {
                   "index": 0,
                   "text": "North"
                 },
-                "90": {
+                "to": 45
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 45,
+                "result": {
                   "index": 1,
                   "text": "East"
                 },
-                "180": {
+                "to": 135
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 135,
+                "result": {
                   "index": 2,
                   "text": "South"
                 },
-                "270": {
+                "to": 225
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 225,
+                "result": {
                   "index": 3,
                   "text": "West"
                 },
-                "360": {
+                "to": 315
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 315,
+                "result": {
                   "index": 4,
                   "text": "North"
-                }
+                },
+                "to": 360
               },
-              "type": "value"
+              "type": "range"
             }
           ],
           "max": 360,
@@ -1857,7 +1876,7 @@
         "h": 8,
         "w": 17,
         "x": 0,
-        "y": 44
+        "y": 42
       },
       "id": 43,
       "options": {
@@ -1884,7 +1903,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_winddir_degree{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_winddir{container=\"ecowitt-exporter\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2028,7 +2047,7 @@
         "h": 8,
         "w": 7,
         "x": 17,
-        "y": 44
+        "y": 42
       },
       "id": 50,
       "options": {
@@ -2058,7 +2077,7 @@
           "disableTextWrap": false,
           "editorMode": "builder",
           "exemplar": false,
-          "expr": "ecowitt_winddir_degree{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_winddir{container=\"ecowitt-exporter\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
@@ -2076,7 +2095,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 50
       },
       "id": 30,
       "panels": [],
@@ -2189,10 +2208,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 5,
         "x": 0,
-        "y": 53
+        "y": 51
       },
       "id": 29,
       "options": {
@@ -2252,10 +2271,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 19,
         "x": 5,
-        "y": 53
+        "y": 51
       },
       "id": 27,
       "options": {
@@ -2315,10 +2334,10 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_solarradiation_wm2{container=\"ecowitt-exporter\"}",
+          "expr": "ecowitt_solarradiation{container=\"ecowitt-exporter\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
+          "legendFormat": "{{__name__}}",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -2333,7 +2352,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 58
       },
       "id": 44,
       "panels": [],
@@ -2417,10 +2436,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 10,
         "x": 0,
-        "y": 62
+        "y": 59
       },
       "id": 45,
       "options": {
@@ -2534,10 +2553,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 10,
         "x": 10,
-        "y": 62
+        "y": 59
       },
       "id": 46,
       "options": {
@@ -2662,10 +2681,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 4,
         "x": 20,
-        "y": 62
+        "y": 59
       },
       "id": 57,
       "options": {
@@ -2706,7 +2725,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 66
       },
       "id": 47,
       "panels": [],
@@ -2819,6 +2838,46 @@
                 ]
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "C"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "volt"
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "from": 0,
+                      "result": {
+                        "color": "red",
+                        "index": 0,
+                        "text": "🪫"
+                      },
+                      "to": 1.5
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 1.5,
+                      "result": {
+                        "color": "green",
+                        "index": 1,
+                        "text": "🔋"
+                      }
+                    },
+                    "type": "range"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -2826,7 +2885,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 67
       },
       "id": 48,
       "options": {
@@ -2879,6 +2938,23 @@
           "range": true,
           "refId": "B",
           "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "ecowitt_batteryvoltage",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "{{sensor}}",
+          "range": true,
+          "refId": "C",
+          "useBackend": false
         }
       ],
       "title": "Battery status",
@@ -2903,5 +2979,5 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 22
+  "version": 25
 }
