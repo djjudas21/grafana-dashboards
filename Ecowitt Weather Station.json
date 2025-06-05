@@ -876,7 +876,6 @@
             "fillOpacity": 30,
             "gradientMode": "opacity",
             "hideFrom": {
-              "graph": false,
               "legend": false,
               "tooltip": false,
               "viz": false
@@ -888,8 +887,8 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
-            "spanNulls": true,
+            "showPoints": "auto",
+            "spanNulls": false,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -899,8 +898,6 @@
             }
           },
           "mappings": [],
-          "max": 45,
-          "min": -5,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -923,16 +920,12 @@
         "x": 0,
         "y": 15
       },
-      "id": 2,
+      "id": 62,
       "options": {
-        "graph": {},
         "legend": {
-          "calcs": [
-            "min",
-            "max"
-          ],
-          "displayMode": "table",
-          "placement": "right",
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
           "showLegend": false
         },
         "tooltip": {
@@ -944,59 +937,18 @@
       "pluginVersion": "12.0.0",
       "targets": [
         {
-          "alias": "Indoor",
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_temp{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_temp{sensor=\"outdoor\"}",
           "fullMetaSearch": false,
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
           "includeNullMetadata": true,
           "legendFormat": "__auto",
-          "measurement": "http_listener_v2",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT (mean(\"tempinf\")-32) * 5/9 FROM \"http_listener_v2\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
           "range": true,
-          "rawQuery": true,
           "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "tempinf"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [],
           "useBackend": false
         }
       ],
-      "timeFrom": "24h",
-      "title": "Temperature last 24 Hours",
+      "title": "Air temperature",
       "type": "timeseries"
     },
     {
@@ -1115,7 +1067,7 @@
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
-            "fillOpacity": 10,
+            "fillOpacity": 0,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -1129,7 +1081,7 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
+            "showPoints": "auto",
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -1139,15 +1091,16 @@
               "mode": "area"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "light-blue"
+                "color": "blue"
               },
               {
-                "color": "light-red",
+                "color": "red",
                 "value": 1013
               }
             ]
@@ -1162,77 +1115,35 @@
         "x": 16,
         "y": 15
       },
-      "id": 13,
+      "id": 63,
       "options": {
         "legend": {
-          "calcs": [
-            "min",
-            "max"
-          ],
-          "displayMode": "table",
-          "placement": "right",
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
           "showLegend": false
         },
         "tooltip": {
           "hideZeros": false,
-          "mode": "multi",
+          "mode": "single",
           "sort": "none"
         }
       },
       "pluginVersion": "12.0.0",
       "targets": [
         {
-          "alias": "Barometric Pressure",
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_barom{container=\"ecowitt-exporter\", sensor=\"relative\"}",
+          "expr": "ecowitt_barom{sensor=\"relative\"}",
           "fullMetaSearch": false,
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
           "includeNullMetadata": true,
           "legendFormat": "__auto",
-          "measurement": "http_listener_v2",
-          "orderByTime": "ASC",
-          "policy": "default",
           "range": true,
           "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "baromrelin"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [],
           "useBackend": false
         }
       ],
-      "timeFrom": "24h",
-      "title": "Barometric Pressure",
+      "title": "Barometric pressure",
       "type": "timeseries"
     },
     {
@@ -1306,7 +1217,20 @@
           },
           "unit": "lengthmm"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "rate"
+            },
+            "properties": [
+              {
+                "id": "custom.drawStyle",
+                "value": "bars"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 8,
@@ -1455,8 +1379,8 @@
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
+            "fillOpacity": 30,
+            "gradientMode": "opacity",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
@@ -1495,20 +1419,7 @@
           },
           "unit": "velocitymph"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "windgust"
-            },
-            "properties": [
-              {
-                "id": "custom.drawStyle",
-                "value": "points"
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 8,
@@ -1854,26 +1765,10 @@
           },
           "unit": "degree"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Wind direction"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#73BF69",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 17,
         "x": 0,
         "y": 42
@@ -2044,7 +1939,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 7,
         "x": 17,
         "y": 42
@@ -2095,7 +1990,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 30,
       "panels": [],
@@ -2211,7 +2106,7 @@
         "h": 7,
         "w": 5,
         "x": 0,
-        "y": 51
+        "y": 52
       },
       "id": 29,
       "options": {
@@ -2274,7 +2169,7 @@
         "h": 7,
         "w": 19,
         "x": 5,
-        "y": 51
+        "y": 52
       },
       "id": 27,
       "options": {
@@ -2352,7 +2247,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 59
       },
       "id": 44,
       "panels": [],
@@ -2439,7 +2334,7 @@
         "h": 7,
         "w": 10,
         "x": 0,
-        "y": 59
+        "y": 60
       },
       "id": 45,
       "options": {
@@ -2556,7 +2451,7 @@
         "h": 7,
         "w": 10,
         "x": 10,
-        "y": 59
+        "y": 60
       },
       "id": 46,
       "options": {
@@ -2684,7 +2579,7 @@
         "h": 7,
         "w": 4,
         "x": 20,
-        "y": 59
+        "y": 60
       },
       "id": 57,
       "options": {
@@ -2725,7 +2620,117 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 67
+      },
+      "id": 61,
+      "panels": [],
+      "title": "Soil moisture",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 30,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 68
+      },
+      "id": 60,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.0.0",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "ecowitt_soilmoisture{container=\"ecowitt-exporter\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "{{sensor}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Soil moisture",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 75
       },
       "id": 47,
       "panels": [],
@@ -2885,7 +2890,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 67
+        "y": 76
       },
       "id": 48,
       "options": {
@@ -2972,12 +2977,12 @@
     "list": []
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 25
+  "version": 30
 }
