@@ -106,7 +106,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -115,7 +115,7 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "ecowitt_temp{container=\"ecowitt-exporter\", sensor=\"outdoor\"}",
+          "expr": "ecowitt_temp{sensor=\"outdoor\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -186,7 +186,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -258,7 +258,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -332,7 +332,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -406,7 +406,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -495,7 +495,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -581,7 +581,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -650,7 +650,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -719,7 +719,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -788,7 +788,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -837,7 +837,7 @@
         },
         "viewMode": "list"
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "title": "Current alerts",
       "type": "alertlist"
     },
@@ -934,7 +934,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -1031,7 +1031,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -1129,7 +1129,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -1254,7 +1254,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -1326,7 +1326,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -1443,7 +1443,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -1618,7 +1618,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -1789,7 +1789,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -1962,7 +1962,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -2124,7 +2124,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -2220,7 +2220,7 @@
           "unit": "Wm2"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -2350,7 +2350,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -2467,7 +2467,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -2597,7 +2597,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -2707,7 +2707,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -2910,7 +2910,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.0",
+      "pluginVersion": "12.0.0+security-01",
       "targets": [
         {
           "datasource": {
@@ -2984,5 +2984,5 @@
   "timezone": "",
   "title": "Ecowitt Weather Station",
   "uid": "iJpRv_8Gk",
-  "version": 30
+  "version": 32
 }
